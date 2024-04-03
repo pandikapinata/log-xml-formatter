@@ -12,9 +12,9 @@ const modifyXML = () => {
   }
 
   const modified = inputString.value
+    .replace(/\\\//g, '/')
+    .replace(/\\r/g, '')
     .replace(/\\n/g, '')
-    .replace(/\\/g, '')
-    .replace(/\r/g, '')
     .replace(/\\"/g, '"');
   outputString.value = beautifyXML(modified);
   copy.value = 'Copy to Clipboard';
